@@ -5,13 +5,6 @@ class Counter extends Component {
     value : this.props.value
   };
 
-
-  renderTags() {
-    return this.state.tags.length === 0 ?
-      <p>There is no tags</p> :
-      this.state.tags.map(tag => <li key={tag}>{tag}</li>);
-  }
-
   handleIncrement = () => {
     this.setState({ value: this.state.value + 1 })
   }
