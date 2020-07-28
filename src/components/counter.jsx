@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 class Counter extends Component {
   state = {
     count : 0,
-    tags: ["tag1". "tag2"]
+    tags: ["tag1", "tag2"]
   }
+
 
   renderTags() {
     return this.state.tags.length === 0 ?
@@ -12,8 +13,8 @@ class Counter extends Component {
       this.state.tags.map(tag => <li key={tag}>{tag}</li>);
   }
 
-  handleIncrement() {
-    console.log("increment called")
+  handleIncrement = () => {
+    console.log("increment called", this)
   }
 
   render() {
