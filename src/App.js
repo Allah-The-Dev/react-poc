@@ -14,6 +14,20 @@ class App
     ]
   };
 
+  //called when component is initialized
+  //order - 1
+  constructor() {
+    super();
+    console.log('App-constructor');
+  }
+
+  //called once component is rendered in DOM
+  //perfect place to make Ajax call to get data
+  //order - 3
+  componentDidMount() {
+    console.log('App-mounted');
+  }
+
   handleDelete = counterId => {
     console.log("even on delete called for id ", counterId);
     const counters = this.state.counters.filter(c => c.id !== counterId);
@@ -36,7 +50,10 @@ class App
     this.setState({counters});//update the state
   }
 
+  //called to create virtual dom and update real dom
+  //order - 2
   render() {
+    console.log('App-rendered');
     return (
       <React.Fragment>
         <NavBar totalCounters={this.state.counters.filter(c => c.value > 0).length} />
