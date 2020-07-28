@@ -1,5 +1,28 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## React concepts
+
+Lifecycle hooks <br/>
+
+1. Mount phase hooks:
+
+  a. constructor
+
+  b. render
+
+  c. componentDidMount
+
+2. Update phase hooks:
+
+  a. render
+
+  b. componentDidUpdate
+
+2. Unmount phase hooks:
+
+  a. componentWillUnmount
+
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -66,3 +89,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
