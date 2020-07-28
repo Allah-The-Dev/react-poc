@@ -15,7 +15,6 @@ class Counters extends Component {
     console.log("even on delete called for id ", counterId);
     const counters = this.state.counters.filter(c => c.id !== counterId);
     this.setState({counters: counters});
-    // this.setState({counters});//this is also a valid line for above
   }
 
   handleReset = () => {
@@ -24,6 +23,14 @@ class Counters extends Component {
       return c;
     });
     this.setState({counters});
+  }
+
+  handleIncrement = counter => {
+    const counters = [...this.state.counters]; //clone the counters
+    const index = counters.indexOf(counter); //get the index of target object
+    counters[index] = {...counter}; //clone the object
+    counters[index].value++;//modify object
+    this.setState({counters});//update the state
   }
 
   render() {
@@ -38,6 +45,7 @@ class Counters extends Component {
           <Counter
             key={counter.id}
             onDelete={this.handleDelete}
+            onIncrement={this.handleIncrement}
             counter={counter}
           >
           </Counter>
